@@ -97,16 +97,40 @@ textarea {
 
 
 html {
-  background-color: #222;
+  background-color: #4e71aa;
   height: 100%;
   width: 100%;
 }
 
 body {
   font-family: 'Helvetica', sans-serif;
-  padding: 2em;
+  color: #fff;
+  padding: 0em 2em 2em 2em;
   font-size: 1.25em;
-  height: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+h1 {
+  font-size: 2.4em;
+}
+
+h2 {
+  font-size: 1.6em;
+}
+
+header,
+footer {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+}
+
+main {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  border-bottom: 3px solid #555;
 }
 
 .wrapper {
@@ -114,18 +138,21 @@ body {
   flex-flow: row wrap;
   justify-content: space-between;
   align-items:center;
-  font-weight: normal;
 }
 
 .div-1, .div-2, .div-3 {
-  color: #fff;
   display: flex;
   justify-content: center;
   align-items: center;
   line-height: 1.5em;
-  font-size: 1.6em;
+  font-size: 1.4em;
   font-weight: normal;
-  height: auto;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.div-1, .div-2 {
+  border-bottom: 1px solid #555;
 }
 
 .wrapper span {
@@ -134,7 +161,13 @@ body {
   font-family: 'Source Sans Pro', sans-serif;
 }
 
+footer {
+  border-top: 3px solid #555;
+}
 
+footer i {
+  padding: 30px 20px 0 0;
+}
 
 
 /* ==========================================================================
@@ -217,16 +250,23 @@ body {
    Modify as content requires.
    ========================================================================== */
 
-@media all and (min-width: 1200px) {
-    .div-1, .div-2, .div-3 {
-         flex-basis: 30%;
-    }
+   @media all and (max-width: 768px) {
+       body {
+         padding: 1em;
+       }
+   }
 
-    .div-1, .div-2 {
+   @media (min-width: 1200px) {
+       .div-1, .div-2, .div-3 {
+         flex-basis: 30%;
+         border-bottom: none;
+       }
+
+       .div-1, .div-2  {
          border-right: 1px solid #555;
-         padding-right: 30px;
-    }
-}
+         padding: 15px;
+       }
+   }
 
 @media print,
        (-webkit-min-device-pixel-ratio: 1.25),
